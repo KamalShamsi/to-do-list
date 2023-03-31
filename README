@@ -1,0 +1,3 @@
+This is a simple to-do list app built using Node.js, Express, and MongoDB. 
+The app allows users to create, read, update, and delete to-do items. 
+Users can add new to-do items, mark items as completed, and delete items from the list.
