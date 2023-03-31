@@ -1,3 +1,5 @@
-This is a simple to-do list app built using Node.js, Express, and MongoDB. 
-The app allows users to create, read, update, and delete to-do items. 
-Users can add new to-do items, mark items as completed, and delete items from the list.
+The to-do list app is a web-based application developed using Node.js, a popular backend JavaScript runtime, Express, a web application framework, and MongoDB, a NoSQL database. The app is designed to help users organize their tasks in a simple and easy-to-use manner.
+
+With the app, users can perform various operations on their to-do items, including creating new items, reading existing items, updating items, and deleting items. Users can add new items to the list by providing a title and a description. Once an item is created, it is displayed in the list along with other items.
+
+Users can mark items as completed by clicking on a checkbox next to the item title. Completed items are crossed out to indicate that they have been completed. Users can also delete items from the list by clicking on a delete button next to each item.
