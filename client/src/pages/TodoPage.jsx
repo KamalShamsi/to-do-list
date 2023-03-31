@@ -15,7 +15,7 @@ export const TodoPage = () => {
   );
   return (
     <div>
-      <h1>MERN TODO APP</h1>
+      <h1>Daily tasks:</h1>
       {isLoading ? (
         <ClipLoader size={150} />
       ) : (
