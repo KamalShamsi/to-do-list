@@ -4,5 +4,7 @@ const router = express.Router();
 
 router.post('/login', require('./routes/loginRoute'));
 
-router.get('/todos',isLoggedIn, require('./routes/todosRoute'));
+router.post('/todos',isLoggedIn, require('./routes/createTodoRoute'));
+router.get('/todos',isLoggedIn, require('./routes/readTodosRoute'));
+
 module.exports = router;
