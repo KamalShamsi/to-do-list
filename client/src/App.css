@@ -5,6 +5,7 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  margin-top: 10vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -20,8 +21,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-title {
+  font-size: 4rem;
+  margin-bottom: 3rem;
 }
 
 .App-link {
@@ -38,5 +43,18 @@
 }
 
 button {
-  font-size: calc(10px + 2vmin);
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #61dafb;
+  color: #282c34;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #282c34;
 }
