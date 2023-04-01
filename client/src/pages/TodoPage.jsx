@@ -19,15 +19,24 @@ export const TodoPage = () => {
     return priorityOrder.indexOf(a.priority) - priorityOrder.indexOf(b.priority);
   });
 
+  const completedTasks = sortedTodos?.filter((todo) => todo.completed);
+  const createdTasks = sortedTodos?.filter((todo) => !todo.completed);
+
   return (
     <div>
       <h1>Daily tasks:</h1>
       {isLoading ? (
         <ClipLoader size={150} />
       ) : (
-        sortedTodos.map((todo) => (
-          <TodoItem todo={todo} key={todo._id} />
-        ))
+        <>
+          {createdTasks.map((todo) => (
+            <TodoItem todo={todo} key={todo._id} />
+          ))}
+          <h2>Completed tasks:</h2>
+          {completedTasks.map((todo) => (
+            <TodoItem todo={todo} key={todo._id} />
+          ))}
+        </>
       )}
       <CreateTodoForm />
     </div>

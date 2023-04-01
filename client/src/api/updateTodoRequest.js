@@ -9,6 +9,7 @@ export default (todo, token) => {
     },
     body: JSON.stringify({
       text: todo.text,
+      priority: todo.priority,
       completed: todo.completed
     })
   })
