@@ -6,7 +6,10 @@ const TodoSchema = new mongoose.Schema({
   },
   completed: {
     type: Boolean,
-  }
+  },
+  priority: {
+    type: String,
+  },
 });
 
 const TodoModel = mongoose.model('Todo', TodoSchema);
