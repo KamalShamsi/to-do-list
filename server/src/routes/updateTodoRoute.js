@@ -5,6 +5,7 @@ module.exports = async (req, res) => {
   const todo = await TodoModel.findById(id);
   todo.completed = req.body.completed;
   todo.text = req.body.text;
+  todo.priority = req.body.priority;
   await todo.save();
   res.json(todo);
-}
+};
