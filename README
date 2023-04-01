@@ -1,5 +1,37 @@
-The to-do list app is a web-based application developed using Node.js, a popular backend JavaScript runtime, Express, a web application framework, and MongoDB, a NoSQL database. The app is designed to help users organize their tasks in a simple and easy-to-use manner.
+This is a full-stack application that allows users to create and manage their to-do lists. Users can sign up and login with their credentials to access their to-do lists. The application is powered by a cloud MongoDB database.
 
-With the app, users can perform various operations on their to-do items, including creating new items, reading existing items, updating items, and deleting items. Users can add new items to the list by providing a title and a description. Once an item is created, it is displayed in the list along with other items.
+Running the Application
+To run the application, you need to start the back-end server and then the front-end.
 
-Users can mark items as completed by clicking on a checkbox next to the item title. Completed items are crossed out to indicate that they have been completed. Users can also delete items from the list by clicking on a delete button next to each item.
+First, open a terminal and navigate to the server directory:
+cd server
+
+Then, install the dependencies and start the server:
+npm install
+npm run start
+
+
+Next, open another terminal and navigate to the client directory:
+cd client
+
+Again, install the dependencies and start the front-end:
+npm install
+npm run dev
+
+After running these commands, the application should be up and running at http://localhost:3000.
+
+Features:
+Create new to-do items
+Edit existing to-do items
+Delete existing to-do items
+Mark to-do items as complete or incomplete
+
+Technologies Used:
+React
+Node.js
+Express
+MongoDB Atlas
+JSON Web Tokens (JWT) for authentication
+React Query for managing server state in the front-end
+Bootstrap for styling
+
