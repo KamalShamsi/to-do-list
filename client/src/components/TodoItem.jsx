@@ -7,7 +7,6 @@ import React, {
 import {
   useQueryClient,
   useMutation,
-  QueryClient,
 } from 'react-query';
 import deleteTodoRequest from '../api/deleteTodoRequest';
 import updateTodoRequest from '../api/updateTodoRequest';
@@ -16,6 +15,7 @@ import { TokenContext } from '../App';
 
 export const TodoItem = ({ todo }) => {
   const [text, setText] = useState(todo.text);
+  const [priority, setPriority] = useState(todo.priority);
   const [token] = useContext(TokenContext);
 
   const queryClient = useQueryClient();
@@ -44,13 +44,14 @@ export const TodoItem = ({ todo }) => {
   );
 
   useEffect(() => {
-    if (text !== todo.text) {
+    if (text !== todo.text || priority !== todo.priority) {
       debouncedUpdateTodo({
         ...todo,
         text,
+        priority,
       });
     }
-  }, [text]);
+  }, [text, priority]);
 
   return (
     <div
@@ -86,6 +87,18 @@ export const TodoItem = ({ todo }) => {
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
+
+      <select
+        value={priority}
+        onChange={(e) => setPriority(e.target.value)}
+        style={{
+          marginRight: '6px',
+        }}
+      >
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
 
       <button
         style={{

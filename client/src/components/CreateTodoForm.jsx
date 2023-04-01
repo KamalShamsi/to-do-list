@@ -5,6 +5,7 @@ import { TokenContext } from '../App';
 
 export const CreateTodoForm = () => {
   const [text, setText] = useState('');
+  const [priority, setPriority] = useState('high');
   const [token] = useContext(TokenContext);
 
   const queryClient = useQueryClient();
@@ -25,6 +26,7 @@ export const CreateTodoForm = () => {
         if (!text) return;
         createTodo({
           text,
+          priority,
         });
         setText('');
       }}
@@ -38,6 +40,17 @@ export const CreateTodoForm = () => {
           marginRight: '6px',
         }}
       />
+      <select
+        value={priority}
+        onChange={(e) => setPriority(e.target.value)}
+        style={{
+          marginRight: '6px',
+        }}
+      >
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
       <button
         style={{
           padding: '5px',

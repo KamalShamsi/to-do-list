@@ -13,13 +13,19 @@ export const TodoPage = () => {
   const { isLoading, data: todos } = useQuery('todos', () =>
     readTodosRequest(token)
   );
+
+  const priorityOrder = ['high', 'medium', 'low'];
+  const sortedTodos = todos?.slice().sort((a, b) => {
+    return priorityOrder.indexOf(a.priority) - priorityOrder.indexOf(b.priority);
+  });
+
   return (
     <div>
       <h1>Daily tasks:</h1>
       {isLoading ? (
         <ClipLoader size={150} />
       ) : (
-        todos.map((todo) => (
+        sortedTodos.map((todo) => (
           <TodoItem todo={todo} key={todo._id} />
         ))
       )}
